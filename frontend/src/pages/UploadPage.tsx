@@ -167,7 +167,7 @@ export function UploadPage() {
 
     try {
       // Step 1: Upload — returns immediately with a case_id
-      const uploadResponse = await fetch('http://localhost:8000/upload', {
+      const uploadResponse = await fetch('https://judgement2action-1.onrender.com/upload', {
         method: 'POST',
         body: formData,
       })
@@ -186,7 +186,7 @@ export function UploadPage() {
 
       while (attempts < maxAttempts) {
         await new Promise(resolve => setTimeout(resolve, 2000))
-        const statusResponse = await fetch(`http://localhost:8000/status/${caseId}`)
+        const statusResponse = await fetch(`https://judgement2action-1.onrender.com/status/${caseId}`)
         const statusData = await statusResponse.json()
 
         if (statusData.processing_status === 'done') {

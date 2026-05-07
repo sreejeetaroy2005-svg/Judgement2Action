@@ -26,7 +26,7 @@ export function TrustedDashboard() {
   useEffect(() => {
     const fetchCases = async () => {
       try {
-        const response = await fetch('http://localhost:8000/cases')
+        const response = await fetch('https://judgement2action-1.onrender.com/cases')
         const data = await response.json()
         setAllCases(data)
         

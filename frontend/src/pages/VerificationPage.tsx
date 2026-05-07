@@ -209,7 +209,7 @@ export function VerificationPage() {
         actions: src.actionPlan // You could also make these editable if needed
       }
 
-      const response = await fetch(`http://localhost:8000/verify/${state.id}`, {
+      const response = await fetch(`https://judgement2action-1.onrender.com/verify/${state.id}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -234,7 +234,7 @@ export function VerificationPage() {
 
     setLoading(true)
     try {
-      await fetch(`http://localhost:8000/verify/${state.id}`, {
+      await fetch(`https://judgement2action-1.onrender.com/verify/${state.id}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: 'rejected' })
