@@ -84,13 +84,23 @@ def process_in_background(file_id: str, file_path: str):
 
         # 1. Extract Text
         text = extract_text_from_pdf(file_path)
+        print(f"DEBUG: Extracted {len(text) if text else 0} characters from PDF.")
+        
+        if not text or len(text.strip()) < 10:
+            cases_db[file_id]["processing_status"] = "error"
+            cases_db[file_id]["error"] = "The PDF appears to be empty or a scanned image. OCR is required."
+            save_db()
+            return
+
         cases_db[file_id]["processing_status"] = "extracting_signals"
 
         # 2. Process with Gemini
         raw_data = process_with_gemini(text)
         if not raw_data:
             cases_db[file_id]["processing_status"] = "error"
-            cases_db[file_id]["error"] = "Gemini failed to extract signals."
+            # Attempt to get the last error from a global or passed variable
+            cases_db[file_id]["error"] = "Gemini analysis failed. Check API Key quota or model availability."
+            save_db()
             return
 
         if isinstance(raw_data, list):
