@@ -448,5 +448,72 @@
     "status": "pending",
     "processing_status": "done",
     "created_at": "2026-05-07T22:58:03.121843"
+  },
+  "5e4d611b-942f-4030-8901-e35cbb0408c7": {
+    "case_title": "A.J. Peiris vs State Of Madras",
+    "court": "Supreme Court of India",
+    "date": "18 March, 1954",
+    "parties": [
+      "A. J. Peiris",
+      "State of Madras"
+    ],
+    "orders": [
+      "The Sessions Judge of South Kanara, who tried the case, convicted the appellant under Section 120-B, read with Section 302 and Section 109 of the Indian Penal Code and sentenced him to death.",
+      "The other two accused were convicted under Section 302/34 of the Indian Penal Code and sentenced to death.",
+      "The Magistrate gave him time up to the 12th August to reflect over the matter and sent him to court custody directing that no Police Officer should meet him.",
+      "On the 28th he was granted pardon (P. 18) by the District Magistrate, South Kanara."
+    ],
+    "directive_sentences": [
+      "The Magistrate gave him time up to the 12th August to reflect over the matter and sent him to court custody directing that no Police Officer should meet him."
+    ],
+    "preview_summary": [
+      "The judgment concerns an appeal by A.J. Peiris against a Madras High Court decision upholding his conviction and death sentence for a conspiracy to murder a man named George.",
+      "The snippet details the background of the conspiracy involving A.J. Peiris, Augustine Souza, David Souza, and the accomplice-turned-approver Albert Patrao.",
+      "The text describes the procedural history, including the arrest of the accused, the recording of a confession, and the granting of a pardon to the approver under the Code of Criminal Procedure."
+    ],
+    "deadlines": [],
+    "actions": [
+      {
+        "task": "Execute compliance measure for directive: The Magistrate gave him time up to the 12th August to reflec...",
+        "type": "COMPLIANCE",
+        "deadline": "Within statutory period (Standard 30 days)",
+        "urgency_score": 4,
+        "risk_level": "MEDIUM",
+        "reason": "Mandatory legal compliance obligation identified by judicial extraction engine.",
+        "evidence_text": "The Magistrate gave him time up to the 12th August to reflect over the matter and sent him to court custody directing that no Police Officer should meet him.",
+        "confidence": 0.92,
+        "department": "Concerned Department Head"
+      }
+    ],
+    "similar_cases": [
+      {
+        "case_id": "doc_71_1951",
+        "title": "Bijjoy Chand Potra vs The State on 14 December 1951 1",
+        "similarity": 0.666719377040863,
+        "relevant_directive": "Bijjoy Chand Potra vs The State on 14 December, 1951\nEquivalent citations: 1952 AIR 105, 1952 SCR 202\nAuthor: Saiyid Fazal Ali\nBench: Saiyid Fazal Ali, Vivian Bose\n           PETITIONER:\nBIJJOY CHAND POTRA\n        Vs.\nRESPONDENT:\nTHE STATE\nDATE OF JUDGMENT:\n14/12/1951\nBENCH:\nFAZAL ALI,...",
+        "year": "1951",
+        "action_plan": "Bijjoy Chand Potra vs The State on 14 December 1951 1"
+      },
+      {
+        "case_id": "doc_35_1950",
+        "title": "Mohinder Singh vs The State on 17 October 1950 1",
+        "similarity": 0.6621582508087158,
+        "relevant_directive": "Mohinder Singh vs The State on 17 October, 1950\nEquivalent citations: 1953 AIR 415, 1950 SCR 821\nAuthor: Saiyid Fazal Ali\nBench: Saiyid Fazal Ali, B.K. Mukherjea, N.",
+        "year": "1950",
+        "action_plan": "Mohinder Singh vs The State on 17 October 1950 1"
+      },
+      {
+        "case_id": "doc_30_1950",
+        "title": "Kapildeo Singh vs The King on 24 January 1950 1",
+        "similarity": 0.6460393667221069,
+        "relevant_directive": "Kapildeo Singh vs The King on 24 January, 1950\nEquivalent citations: [1950]SUPPSCR144\nBench: Meher Chand Mahajan, Saiyad Fazal Ali\nJUDGMENT\n Mahajan, J.\n1. This is an appeal by special leave against an order of the High Court at Patna, affirming the\nconviction of the appellant by the Additional Sessions Judge, Arrah, under s.",
+        "year": "1950",
+        "action_plan": "Kapildeo Singh vs The King on 24 January 1950 1"
+      }
+    ],
+    "id": "5e4d611b-942f-4030-8901-e35cbb0408c7",
+    "status": "pending",
+    "processing_status": "done",
+    "created_at": "2026-05-07T23:00:45.445898"
   }
 }

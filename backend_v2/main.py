@@ -1,6 +1,5 @@
 import os
 import shutil
-from flask_cors import CORS
 from fastapi import FastAPI, UploadFile, File, HTTPException, Body, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from modules.extractor import extract_text_from_pdf
@@ -27,7 +26,7 @@ app = FastAPI(title="Judgment2Action API", lifespan=lifespan)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
