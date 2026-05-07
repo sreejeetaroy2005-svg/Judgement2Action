@@ -1,5 +1,6 @@
 import os
 import shutil
+from flask_cors import CORS
 from fastapi import FastAPI, UploadFile, File, HTTPException, Body, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from modules.extractor import extract_text_from_pdf
