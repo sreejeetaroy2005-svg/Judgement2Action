@@ -58,10 +58,16 @@ def map_to_administrative_task(directive_text, action_type):
     
     if "notice" in text:
         return "Issue necessary notices to concerned parties as per court order"
+    
+    if "constitute" in text or "committee" in text:
+        return "Constitute a task-force/committee for implementation of directives"
+
+    if "report" in text or "compliance" in text:
+        return "Prepare and submit a periodic compliance report to the Court"
 
     # Default administrative transformation - make it more professional
     clean_snippet = directive_text[:60].strip()
-    return f"Take administrative steps for compliance: {clean_snippet}..."
+    return f"Execute compliance measure for directive: {clean_snippet}..."
 
 def generate_action_from_signal(signal, signal_type):
     """
@@ -71,15 +77,21 @@ def generate_action_from_signal(signal, signal_type):
     responsible = signal.get("responsible_entity", "Concerned Department Head")
     
     # Urgency & Risk Logic
-    is_critical = any(word in directive.lower() for word in ["contempt", "personal appearance", "arrest", "forthwith"])
+    is_critical = any(word in directive.lower() for word in [
+        "contempt", "personal appearance", "arrest", "forthwith", "non-compliance", 
+        "peremptory", "strict", "warrant", "disciplinary"
+    ])
     
     task = map_to_administrative_task(directive, signal_type)
     deadline = infer_deadline(signal.get("deadline"), directive)
     
-    urgency_score = 9 if is_critical else (7 if "within" in directive.lower() else 4)
+    urgency_score = 9 if is_critical else (7 if "within" in directive.lower() or "weeks" in directive.lower() else 4)
     risk_level = "CRITICAL" if is_critical else ("HIGH" if urgency_score > 6 else "MEDIUM")
     
-    reason = "Mandatory court directive with potential contempt implications" if is_critical else "Procedural requirement to ensure legal compliance"
+    if is_critical:
+        reason = "Potential Contempt of Court. This is a peremptory order requiring immediate administrative intervention."
+    else:
+        reason = "Mandatory legal compliance obligation identified by judicial extraction engine."
 
     return {
         "task": task,

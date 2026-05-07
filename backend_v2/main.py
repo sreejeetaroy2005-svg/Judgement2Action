@@ -38,8 +38,37 @@ async def log_requests(request, call_next):
     print(f"Response status: {response.status_code}")
     return response
 
-# In-memory storage for demo (Replace with Firestore/SQLite)
-cases_db = {}
+import json
+
+# Persistent Storage for demo (JSON based for hackathon)
+DB_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cases_db.json")
+
+def load_db():
+    if os.path.exists(DB_FILE):
+        try:
+            with open(DB_FILE, "r") as f:
+                return json.load(f)
+        except:
+            return {}
+    return {}
+
+def save_db():
+    with open(DB_FILE, "w") as f:
+        json.dump(cases_db, f, indent=2)
+
+def log_accuracy_feedback(case_id: str, was_edited: bool):
+    """Logs whether a case required human editing for future evaluation."""
+    log_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "accuracy_log.jsonl")
+    log_entry = {
+        "case_id": case_id,
+        "timestamp": datetime.now().isoformat(),
+        "was_edited": was_edited,
+        "model_used": cases_db.get(case_id, {}).get("model_used", "unknown")
+    }
+    with open(log_file, "a") as f:
+        f.write(json.dumps(log_entry) + "\n")
+
+cases_db = load_db()
 
 UPLOAD_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "uploads")
 os.makedirs(UPLOAD_DIR, exist_ok=True)
@@ -81,6 +110,7 @@ def process_in_background(file_id: str, file_path: str):
         final_data["processing_status"] = "done"
         final_data["created_at"] = cases_db[file_id]["created_at"]
         cases_db[file_id] = final_data
+        save_db()
         print(f"Case {file_id} processed successfully.")
 
     except Exception as e:
@@ -111,6 +141,7 @@ async def upload_judgment(pdf: UploadFile = File(...), background_tasks: Backgro
         "created_at": datetime.now().isoformat(),
         "file_name": pdf.filename
     }
+    save_db()
 
     # Kick off processing in the background
     background_tasks.add_task(process_in_background, file_id, file_path)
@@ -150,6 +181,8 @@ async def verify_case(case_id: str, payload: dict = Body(...)):
     cases_db[case_id]["status"] = payload.get("status", "approved")
     cases_db[case_id]["actions"] = payload.get("actions", cases_db[case_id]["actions"])
     cases_db[case_id]["verified_at"] = datetime.now().isoformat()
+    save_db()
+    log_accuracy_feedback(case_id, was_edited=True) # Assuming every verification call potentially refines data
 
     return {"message": f"Case {cases_db[case_id]['status']} successfully", "id": case_id}
 

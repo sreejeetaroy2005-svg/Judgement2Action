@@ -13,6 +13,8 @@ Judgment2Action is an automated pipeline designed to transform complex court jud
 - **Risk & Urgency Scoring**: Rule-based engine that identifies "Contempt Triggers" and "Limitation Act" nuances to assign risk levels (CRITICAL, HIGH, MEDIUM).
 - **Interactive Verification Page**: A high-fidelity dashboard for human-in-the-loop verification of extracted data and proposed plans.
 - **Trusted View Dashboard**: A clean, premium executive view for decision-makers showing only approved action plans grouped by department.
+- **Self-Correction (Reflexion) Loop**: Dual-pass AI processing that verifies and corrects hallucinations in real-time.
+- **Context-Aware Extraction**: Intelligent chunking that prioritizes the 'Order' sections of lengthy legal judgments.
 
 ## 🛠️ Technology Stack
 
