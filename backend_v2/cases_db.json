@@ -226,5 +226,46 @@
     "status": "pending",
     "processing_status": "done",
     "created_at": "2026-05-07T22:12:35.616836"
+  },
+  "efe11950-a8b4-4fb6-9caf-d0e028f726a8": {
+    "case_title": null,
+    "court": null,
+    "date": null,
+    "parties": [],
+    "orders": [],
+    "directive_sentences": [],
+    "preview_summary": [],
+    "deadlines": [],
+    "actions": [],
+    "similar_cases": [
+      {
+        "case_id": "doc_77_1951",
+        "title": "Col D I Mac Pherson vs M N Appanna And Another on 9 February 1951 1",
+        "similarity": 0.08863723278045654,
+        "relevant_directive": "Col. D.I.Mac Pherson vs M.N. Appanna And Another on 9\nFebruary, 1951\nEquivalent citations: 1951 AIR 184, 1951 SCR 161, AIR 1951 SUPREME\nCOURT 184, 1964 MADLW 535\nAuthor: Saiyid Fazal Ali\nBench: Saiyid Fazal Ali, B.K. Mukherjea, N. Chandrasekhara Aiyar\n           PETITIONER:\nCOL. D.I.MAC PHERSON\n        Vs.\nRESPONDENT:\nM.N.",
+        "year": "1951",
+        "action_plan": "Col D I Mac Pherson vs M N Appanna And Another on 9 February 1951 1"
+      },
+      {
+        "case_id": "doc_36_1950",
+        "title": "Naguba Appa vs Namdev on 20 November 1950 1",
+        "similarity": 0.08309793472290039,
+        "relevant_directive": "Naguba Appa vs Namdev on 20 November, 1950\nEquivalent citations: AIR1954SC50, AIR 1954 SUPREME COURT 50\nJUDGMENT\n Mahajan, J. \n1. A decree for pre-emption of the property in suit was passed in favour of the plaintiff and he was\nordered to deposit the sale price within two months from the date of the decree.",
+        "year": "1950",
+        "action_plan": "Naguba Appa vs Namdev on 20 November 1950 1"
+      },
+      {
+        "case_id": "doc_1_1950",
+        "title": "Arjuna Lal Misra vs The State on 30 November 1950 1",
+        "similarity": 0.07421875,
+        "relevant_directive": "Arjuna Lal Misra vs The State on 30 November, 1950\nEquivalent citations: AIR1953SC411, AIR 1953 SUPREME COURT 411, 17\nCUTLT 1\nBench: B.K. Mukherjea, Chandrasekhara Aiyar\nJUDGMENT\nFazl Ali, J.\n1.",
+        "year": "1950",
+        "action_plan": "Arjuna Lal Misra vs The State on 30 November 1950 1"
+      }
+    ],
+    "id": "efe11950-a8b4-4fb6-9caf-d0e028f726a8",
+    "status": "pending",
+    "processing_status": "done",
+    "created_at": "2026-05-07T22:27:32.235386"
   }
 }
