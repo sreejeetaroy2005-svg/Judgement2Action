@@ -589,5 +589,202 @@
     "status": "pending",
     "processing_status": "done",
     "created_at": "2026-05-07T23:02:42.793265"
+  },
+  "df12ccb7-c2e6-4cdf-b2be-f13223c9d4ae": {
+    "case_title": "A.J. Peiris vs State Of Madras",
+    "court": "Supreme Court of India",
+    "date": "18 March, 1954",
+    "parties": [
+      "A.J. Peiris",
+      "State Of Madras"
+    ],
+    "orders": [],
+    "directive_sentences": [],
+    "preview_summary": [
+      "The appellant, A.J. Peiris, challenged a conviction and death sentence for conspiracy and murder under Sections 120-B, 302, and 109 of the Indian Penal Code.",
+      "The prosecution's case relies heavily on the testimony of an approver, Albert Patrao, whose statement was treated under Section 288 of the Code of Criminal Procedure after he resiled from his previous testimony during the Sessions trial.",
+      "The provided text details the alleged conspiracy to murder an individual named George, the disposal of the body, the subsequent arrest of the accused parties, and the procedural handling of the approver's confession."
+    ],
+    "deadlines": [],
+    "actions": [],
+    "similar_cases": [
+      {
+        "case_id": "doc_71_1951",
+        "title": "Bijjoy Chand Potra vs The State on 14 December 1951 1",
+        "similarity": 0.666719377040863,
+        "relevant_directive": "Bijjoy Chand Potra vs The State on 14 December, 1951\nEquivalent citations: 1952 AIR 105, 1952 SCR 202\nAuthor: Saiyid Fazal Ali\nBench: Saiyid Fazal Ali, Vivian Bose\n           PETITIONER:\nBIJJOY CHAND POTRA\n        Vs.\nRESPONDENT:\nTHE STATE\nDATE OF JUDGMENT:\n14/12/1951\nBENCH:\nFAZAL ALI,...",
+        "year": "1951",
+        "action_plan": "Bijjoy Chand Potra vs The State on 14 December 1951 1"
+      },
+      {
+        "case_id": "doc_35_1950",
+        "title": "Mohinder Singh vs The State on 17 October 1950 1",
+        "similarity": 0.6621582508087158,
+        "relevant_directive": "Mohinder Singh vs The State on 17 October, 1950\nEquivalent citations: 1953 AIR 415, 1950 SCR 821\nAuthor: Saiyid Fazal Ali\nBench: Saiyid Fazal Ali, B.K. Mukherjea, N.",
+        "year": "1950",
+        "action_plan": "Mohinder Singh vs The State on 17 October 1950 1"
+      },
+      {
+        "case_id": "doc_30_1950",
+        "title": "Kapildeo Singh vs The King on 24 January 1950 1",
+        "similarity": 0.6460393667221069,
+        "relevant_directive": "Kapildeo Singh vs The King on 24 January, 1950\nEquivalent citations: [1950]SUPPSCR144\nBench: Meher Chand Mahajan, Saiyad Fazal Ali\nJUDGMENT\n Mahajan, J.\n1. This is an appeal by special leave against an order of the High Court at Patna, affirming the\nconviction of the appellant by the Additional Sessions Judge, Arrah, under s.",
+        "year": "1950",
+        "action_plan": "Kapildeo Singh vs The King on 24 January 1950 1"
+      }
+    ],
+    "id": "df12ccb7-c2e6-4cdf-b2be-f13223c9d4ae",
+    "status": "pending",
+    "processing_status": "done",
+    "created_at": "2026-05-07T23:09:53.041853"
+  },
+  "6e998e20-6838-4429-8f39-038711951511": {
+    "case_title": "A.J. Peiris vs State Of Madras",
+    "court": "Supreme Court of India",
+    "date": "18 March, 1954",
+    "parties": [
+      "A.J. Peiris",
+      "State Of Madras"
+    ],
+    "orders": [
+      "Dismissal of the appeal, confirming the conviction and death sentence passed by the trial court."
+    ],
+    "directive_sentences": [
+      "We accordingly hold that the conviction and sentence are fully justified and dismiss this appeal."
+    ],
+    "preview_summary": [
+      "The Supreme Court upheld the conviction and sentence of the appellant for conspiracy and murder under the Indian Penal Code.",
+      "The Court dismissed the challenges regarding the validity of the pardon granted to the approver under Section 337 of the Criminal Procedure Code and refused to re-examine findings of fact."
+    ],
+    "deadlines": [],
+    "actions": [
+      {
+        "task": "Execute compliance measure for directive: We accordingly hold that the conviction and sentence are ful...",
+        "type": "COMPLIANCE",
+        "deadline": "Within statutory period (Standard 30 days)",
+        "urgency_score": 4,
+        "risk_level": "MEDIUM",
+        "reason": "Mandatory legal compliance obligation identified by judicial extraction engine.",
+        "evidence_text": "We accordingly hold that the conviction and sentence are fully justified and dismiss this appeal.",
+        "confidence": 0.92,
+        "department": "Concerned Department Head"
+      }
+    ],
+    "similar_cases": [
+      {
+        "case_id": "doc_71_1951",
+        "title": "Bijjoy Chand Potra vs The State on 14 December 1951 1",
+        "similarity": 0.666719377040863,
+        "relevant_directive": "Bijjoy Chand Potra vs The State on 14 December, 1951\nEquivalent citations: 1952 AIR 105, 1952 SCR 202\nAuthor: Saiyid Fazal Ali\nBench: Saiyid Fazal Ali, Vivian Bose\n           PETITIONER:\nBIJJOY CHAND POTRA\n        Vs.\nRESPONDENT:\nTHE STATE\nDATE OF JUDGMENT:\n14/12/1951\nBENCH:\nFAZAL ALI,...",
+        "year": "1951",
+        "action_plan": "Bijjoy Chand Potra vs The State on 14 December 1951 1"
+      },
+      {
+        "case_id": "doc_35_1950",
+        "title": "Mohinder Singh vs The State on 17 October 1950 1",
+        "similarity": 0.6621582508087158,
+        "relevant_directive": "Mohinder Singh vs The State on 17 October, 1950\nEquivalent citations: 1953 AIR 415, 1950 SCR 821\nAuthor: Saiyid Fazal Ali\nBench: Saiyid Fazal Ali, B.K. Mukherjea, N.",
+        "year": "1950",
+        "action_plan": "Mohinder Singh vs The State on 17 October 1950 1"
+      },
+      {
+        "case_id": "doc_30_1950",
+        "title": "Kapildeo Singh vs The King on 24 January 1950 1",
+        "similarity": 0.6460393667221069,
+        "relevant_directive": "Kapildeo Singh vs The King on 24 January, 1950\nEquivalent citations: [1950]SUPPSCR144\nBench: Meher Chand Mahajan, Saiyad Fazal Ali\nJUDGMENT\n Mahajan, J.\n1. This is an appeal by special leave against an order of the High Court at Patna, affirming the\nconviction of the appellant by the Additional Sessions Judge, Arrah, under s.",
+        "year": "1950",
+        "action_plan": "Kapildeo Singh vs The King on 24 January 1950 1"
+      }
+    ],
+    "id": "6e998e20-6838-4429-8f39-038711951511",
+    "status": "pending",
+    "processing_status": "done",
+    "created_at": "2026-05-07T23:16:15.563511"
+  },
+  "04f8cdc4-cd36-4409-97b7-68f4c3db85e7": {
+    "id": "04f8cdc4-cd36-4409-97b7-68f4c3db85e7",
+    "processing_status": "error",
+    "status": "pending",
+    "created_at": "2026-05-07T23:16:53.204947",
+    "file_name": "court.pdf",
+    "error": "Gemini failed to extract signals."
+  },
+  "7259855d-9be6-47ed-b7a4-8cbe75d5ce55": {
+    "id": "7259855d-9be6-47ed-b7a4-8cbe75d5ce55",
+    "processing_status": "error",
+    "status": "pending",
+    "created_at": "2026-05-07T23:17:03.568319",
+    "file_name": "court.pdf",
+    "error": "Gemini failed to extract signals."
+  },
+  "5f5d9cc7-c39c-4c37-aab3-9469c5d1fc05": {
+    "case_title": "A.J. Peiris vs State Of Madras",
+    "court": "Supreme Court of India",
+    "date": "18 March, 1954",
+    "parties": [
+      "A.J. Peiris",
+      "State Of Madras"
+    ],
+    "orders": [
+      "The Court dismissed the appeal and upheld the conviction and death sentence passed by the Sessions Judge."
+    ],
+    "directive_sentences": [
+      "We accordingly hold that the conviction and sentence are fully justified and dismiss this appeal."
+    ],
+    "preview_summary": [
+      "The Supreme Court affirmed the conviction of the appellant under Section 120-B read with Section 302 and Section 109 of the Indian Penal Code.",
+      "The Court rejected arguments regarding the illegality of the pardon tendered to the approver and declined to re-examine findings of fact."
+    ],
+    "deadlines": [],
+    "actions": [
+      {
+        "task": "Execute compliance measure for directive: We accordingly hold that the conviction and sentence are ful...",
+        "type": "COMPLIANCE",
+        "deadline": "Within statutory period (Standard 30 days)",
+        "urgency_score": 4,
+        "risk_level": "MEDIUM",
+        "reason": "Mandatory legal compliance obligation identified by judicial extraction engine.",
+        "evidence_text": "We accordingly hold that the conviction and sentence are fully justified and dismiss this appeal.",
+        "confidence": 0.92,
+        "department": "Concerned Department Head"
+      }
+    ],
+    "similar_cases": [
+      {
+        "case_id": "doc_71_1951",
+        "title": "Bijjoy Chand Potra vs The State on 14 December 1951 1",
+        "similarity": 0.666719377040863,
+        "relevant_directive": "Bijjoy Chand Potra vs The State on 14 December, 1951\nEquivalent citations: 1952 AIR 105, 1952 SCR 202\nAuthor: Saiyid Fazal Ali\nBench: Saiyid Fazal Ali, Vivian Bose\n           PETITIONER:\nBIJJOY CHAND POTRA\n        Vs.\nRESPONDENT:\nTHE STATE\nDATE OF JUDGMENT:\n14/12/1951\nBENCH:\nFAZAL ALI,...",
+        "year": "1951",
+        "action_plan": "Bijjoy Chand Potra vs The State on 14 December 1951 1"
+      },
+      {
+        "case_id": "doc_35_1950",
+        "title": "Mohinder Singh vs The State on 17 October 1950 1",
+        "similarity": 0.6621582508087158,
+        "relevant_directive": "Mohinder Singh vs The State on 17 October, 1950\nEquivalent citations: 1953 AIR 415, 1950 SCR 821\nAuthor: Saiyid Fazal Ali\nBench: Saiyid Fazal Ali, B.K. Mukherjea, N.",
+        "year": "1950",
+        "action_plan": "Mohinder Singh vs The State on 17 October 1950 1"
+      },
+      {
+        "case_id": "doc_30_1950",
+        "title": "Kapildeo Singh vs The King on 24 January 1950 1",
+        "similarity": 0.6460393667221069,
+        "relevant_directive": "Kapildeo Singh vs The King on 24 January, 1950\nEquivalent citations: [1950]SUPPSCR144\nBench: Meher Chand Mahajan, Saiyad Fazal Ali\nJUDGMENT\n Mahajan, J.\n1. This is an appeal by special leave against an order of the High Court at Patna, affirming the\nconviction of the appellant by the Additional Sessions Judge, Arrah, under s.",
+        "year": "1950",
+        "action_plan": "Kapildeo Singh vs The King on 24 January 1950 1"
+      }
+    ],
+    "id": "5f5d9cc7-c39c-4c37-aab3-9469c5d1fc05",
+    "status": "pending",
+    "processing_status": "done",
+    "created_at": "2026-05-07T23:17:10.453275"
+  },
+  "1b787236-ce49-4650-8c27-8e0b8854db92": {
+    "id": "1b787236-ce49-4650-8c27-8e0b8854db92",
+    "processing_status": "queued",
+    "status": "pending",
+    "created_at": "2026-05-07T23:22:34.239359",
+    "file_name": "court.pdf"
   }
 }
