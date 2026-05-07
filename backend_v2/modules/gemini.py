@@ -89,15 +89,15 @@ def verify_extraction(text: str, extracted_json: dict):
 def process_with_gemini(text: str, file_path: str = None):
     # Try multiple models in case of high demand or quota issues
     models_to_try = [
-        'gemini-3.1-flash-lite-preview', 
-        'gemini-2.0-flash',              
-        'gemini-flash-latest'            
+        'gemini-1.5-flash',              
+        'gemini-2.0-flash-exp',
+        'gemini-1.5-pro'
     ]
     
     # Context-aware chunking: prioritize the end of the judgment where orders usually are
-    if len(text) > 30000:
-        # Take first 10k (context) and last 20k (orders)
-        text_for_ai = text[:10000] + "\n[...]\n" + text[-20000:]
+    if len(text) > 25000:
+        # Take first 5k (context) and last 15k (orders) to stay safe with token limits
+        text_for_ai = text[:5000] + "\n[...]\n" + text[-15000:]
     else:
         text_for_ai = text
         
@@ -105,6 +105,10 @@ def process_with_gemini(text: str, file_path: str = None):
     
     last_error = None
     
+    if not key:
+        print("CRITICAL: GEMINI_API_KEY is missing!")
+        return None
+
     for model_name in models_to_try:
         print(f"DEBUG: Attempting extraction with model: {model_name}")
         try:
@@ -115,16 +119,27 @@ def process_with_gemini(text: str, file_path: str = None):
             )
             
             if not response or not response.text:
+                print(f"WARN: Model {model_name} returned empty response.")
                 continue
 
-            clean_json = response.text.replace("```json", "").replace("```", "").strip()
-            result = json.loads(clean_json)
+            # Robust JSON cleaning
+            raw_text = response.text.strip()
+            if "```json" in raw_text:
+                raw_text = raw_text.split("```json")[1].split("```")[0].strip()
+            elif "```" in raw_text:
+                raw_text = raw_text.split("```")[1].strip()
+            
+            result = json.loads(raw_text)
 
             if isinstance(result, list) and len(result) > 0:
                 result = result[0]
             
-            # STEP 2: SELF-CORRECTION LOOP
-            final_result = verify_extraction(text_for_ai, result)
+            # STEP 2: SELF-CORRECTION LOOP (Optional/Fallback)
+            try:
+                final_result = verify_extraction(text_for_ai, result)
+            except Exception as ve:
+                print(f"WARN: Verification failed, using original result: {ve}")
+                final_result = result
             
             # Robustness check: Ensure result is a dictionary
             if isinstance(final_result, list) and len(final_result) > 0:
@@ -134,13 +149,14 @@ def process_with_gemini(text: str, file_path: str = None):
                 print(f"ERROR: Model {model_name} returned non-dict JSON. Type: {type(final_result)}")
                 continue
 
-            print(f"SUCCESS: Gemini extraction & verification complete. compliance={final_result.get('compliance_required')}")
+            print(f"SUCCESS: Gemini extraction complete. compliance={final_result.get('compliance_required')}")
             return final_result
             
         except Exception as e:
             last_error = str(e)
             print(f"ERROR: Model {model_name} failed: {last_error}")
-            if "API_KEY_INVALID" in last_error:
+            if "API_KEY_INVALID" in last_error or "403" in last_error:
+                print("CRITICAL: API Key issue detected.")
                 break
             continue
             

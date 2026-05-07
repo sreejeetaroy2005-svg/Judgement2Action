@@ -782,9 +782,17 @@
   },
   "1b787236-ce49-4650-8c27-8e0b8854db92": {
     "id": "1b787236-ce49-4650-8c27-8e0b8854db92",
-    "processing_status": "queued",
+    "processing_status": "error",
     "status": "pending",
     "created_at": "2026-05-07T23:22:34.239359",
+    "file_name": "court.pdf",
+    "error": "Gemini failed to extract signals."
+  },
+  "3b95fa42-cdb4-4ad5-9714-eba08f49601d": {
+    "id": "3b95fa42-cdb4-4ad5-9714-eba08f49601d",
+    "processing_status": "queued",
+    "status": "pending",
+    "created_at": "2026-05-07T23:23:47.526549",
     "file_name": "court.pdf"
   }
 }
