@@ -119,10 +119,21 @@ def process_with_gemini(text: str, file_path: str = None):
 
             clean_json = response.text.replace("```json", "").replace("```", "").strip()
             result = json.loads(clean_json)
+
+            if isinstance(result, list) and len(result) > 0:
+                result = result[0]
             
             # STEP 2: SELF-CORRECTION LOOP
             final_result = verify_extraction(text_for_ai, result)
             
+            # Robustness check: Ensure result is a dictionary
+            if isinstance(final_result, list) and len(final_result) > 0:
+                final_result = final_result[0]
+            
+            if not isinstance(final_result, dict):
+                print(f"ERROR: Model {model_name} returned non-dict JSON. Type: {type(final_result)}")
+                continue
+
             print(f"SUCCESS: Gemini extraction & verification complete. compliance={final_result.get('compliance_required')}")
             return final_result
             

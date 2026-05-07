@@ -122,7 +122,7 @@ def validate_and_enrich_actions(extraction_data: dict):
 
     if extraction_data.get("compliance_required") or directives:
         for directive in directives:
-            if len(directive) > 20:
+            if len(directive) > 10:
                 action = generate_action_from_signal({"text": sanitize_text(directive)}, "COMPLIANCE")
                 # Rename for frontend compatibility
                 action["department"] = action.pop("responsible_department")

@@ -1,0 +1,230 @@
+{
+  "37d8d403-082f-475c-af0c-8f753379c07e": {
+    "id": "37d8d403-082f-475c-af0c-8f753379c07e",
+    "processing_status": "error",
+    "status": "pending",
+    "created_at": "2026-05-07T21:37:19.044110",
+    "file_name": "The_State_Of_Goa_vs_Namita_Tripathi_on_3_March_2025_1.PDF",
+    "error": "Gemini failed to extract signals."
+  },
+  "b23c1694-7f92-438e-bca4-10de9dbd63b3": {
+    "case_title": "Vishnoo Mittal vs M/S. Shakti Trading Company",
+    "court": "Supreme Court of India",
+    "date": "17 March, 2025",
+    "parties": [
+      "Vishnoo Mittal",
+      "M/S. Shakti Trading Company"
+    ],
+    "orders": [
+      "The Supreme Court granted leave to appeal and observed that the High Court erred in its reliance on the P. Mohan Raj precedent because the cause of action in the present case arose after the imposition of a moratorium under the Insolvency and Bankruptcy Code, 2016."
+    ],
+    "directive_sentences": [
+      "Leave granted."
+    ],
+    "preview_summary": [
+      "The Supreme Court distinguished the present case from P. Mohan Raj, noting that the cause of action for the Negotiable Instruments Act (NI Act) offence arose only after the insolvency commencement date and the imposition of a moratorium under Section 14 of the IBC.",
+      "The Court clarified that under Section 138 of the NI Act, the cause of action is only completed when the drawer fails to make payment within fifteen days of receipt of a demand notice, which in this instance occurred while the moratorium was already in effect."
+    ],
+    "deadlines": [],
+    "actions": [
+      {
+        "task": "Evaluate legal grounds for appeal and prepare memo for competent authority",
+        "type": "APPEAL",
+        "deadline": "Within 30 days of order receipt",
+        "department": "Legal Affairs",
+        "urgency_score": 7,
+        "risk_level": "HIGH",
+        "reason": "Decision allows for appeal within statutory period.",
+        "evidence_text": "Leave granted.",
+        "confidence": 0.92
+      }
+    ],
+    "similar_cases": [
+      {
+        "case_id": "doc_5_1950",
+        "title": "Bhawanipore Banking Corpora Tion Ltd vs Gouri Shankar Sharma on 14 March 1950 1",
+        "similarity": 0.6613534092903137,
+        "relevant_directive": "Bhawanipore Banking Corpora-Tion, Ltd vs Gouri Shankar\nSharma on 14 March, 1950\nEquivalent citations: 1950 AIR, 6 1950 SCR 25, AIR 1950 SUPREME COURT 6\nAuthor: Saiyid Fazal Ali\nBench: Saiyid Fazal Ali, Hiralal J.",
+        "year": "1950",
+        "action_plan": "Bhawanipore Banking Corpora Tion Ltd vs Gouri Shankar Sharma on 14 March 1950 1"
+      },
+      {
+        "case_id": "doc_11_1950",
+        "title": "Chittaranjan Mukherji vs Barhoo Mahto on 5 May 1950 1",
+        "similarity": 0.6559493541717529,
+        "relevant_directive": "Chittaranjan Mukherji vs Barhoo Mahto on 5 May, 1950\nEquivalent citations: AIR1953SC472, AIR 1953 SUPREME COURT 472, 1987\nCALLJ 420\nAuthor: Chief Justice\nBench: Chief Justice\nJUDGMENT\nPatanjali Sastri, J. \n1.",
+        "year": "1950",
+        "action_plan": "Chittaranjan Mukherji vs Barhoo Mahto on 5 May 1950 1"
+      },
+      {
+        "case_id": "doc_73_1951",
+        "title": "B Venkataramana vs State Of Tamil Nadu Anr on 9 April 1951 1",
+        "similarity": 0.6553397178649902,
+        "relevant_directive": "B. Venkataramana vs State Of Tamil Nadu & Anr on 9 April, 1951\nEquivalent citations: AIR 1951 SUPREME COURT 229, 1964 MADLW 434\nBench: S.Fazal Ali, M.C. Mahajan\n           CASE NO.:\nWrit Petition (civil)  318 of 1950\nPETITIONER:\nB. VENKATARAMANA \nRESPONDENT:\nSTATE OF TAMIL NADU & ANR. \nDATE OF JUDGMENT: 09/04/1951\nBENCH:\nH.L.",
+        "year": "1951",
+        "action_plan": "B Venkataramana vs State Of Tamil Nadu Anr on 9 April 1951 1"
+      }
+    ],
+    "id": "b23c1694-7f92-438e-bca4-10de9dbd63b3",
+    "status": "approved",
+    "processing_status": "done",
+    "created_at": "2026-05-07T21:40:20.524684",
+    "verified_at": "2026-05-07T21:42:15.076954"
+  },
+  "e14b06f7-289c-4665-8c38-f5efda06f3cc": {
+    "case_title": "The Municipal Corporation Of Greater Mumbai & Ors. Versus Century Textiles And Industries Limited & Ors.",
+    "court": "Supreme Court of India",
+    "date": "7 January 2025",
+    "parties": [
+      "The Municipal Corporation Of Greater Mumbai & Ors.",
+      "Century Textiles And Industries Limited & Ors."
+    ],
+    "orders": [
+      "The Bombay High Court, in its judgment dated 14.03.2022, directed the Municipal Corporation of Greater Mumbai to execute a formal conveyance of plot C.S. No. 1546 of Lower Parel Division in favour of Respondent No. 1 within eight weeks."
+    ],
+    "directive_sentences": [
+      "directing the appellant (Respondent No.1 therein) to execute formal conveyance of plot bearing C.S. No.1546 of Lower Parel Division, Mumbai in favour of Reason: MCGM the Respondent No.1 (Petitioner no.1 therein) within a period of eight weeks."
+    ],
+    "preview_summary": [
+      "The Supreme Court is hearing an appeal against a Bombay High Court order which mandated the Municipal Corporation of Greater Mumbai to convey land to Century Textiles and Industries Limited.",
+      "The dispute originates from a 1918 application under the Poorer Classes Accommodation Scheme (PCAS) involving land intended for worker dwellings, which has been the subject of multiple statutory transitions and a 51-year period of inaction regarding conveyance."
+    ],
+    "deadlines": [
+      {
+        "text": null,
+        "associated_directive": null
+      }
+    ],
+    "actions": [
+      {
+        "task": "Execute compliance measure for directive: directing the appellant (Respondent No.1 therein) to execute...",
+        "type": "COMPLIANCE",
+        "deadline": "Within statutory period (Standard 30 days)",
+        "urgency_score": 7,
+        "risk_level": "HIGH",
+        "reason": "Mandatory legal compliance obligation identified by judicial extraction engine.",
+        "evidence_text": "directing the appellant (Respondent No.1 therein) to execute formal conveyance of plot bearing C.S. No.1546 of Lower Parel Division, Mumbai in favour of Reason: MCGM the Respondent No.1 (Petitioner no.1 therein) within a period of eight weeks.",
+        "confidence": 0.92,
+        "department": "Concerned Department Head"
+      },
+      {
+        "task": "Execute compliance measure for directive: The Bombay High Court, in its judgment dated 14.03.2022, dir...",
+        "type": "EXECUTION",
+        "deadline": "Within statutory period (Standard 30 days)",
+        "urgency_score": 7,
+        "risk_level": "HIGH",
+        "reason": "Mandatory legal compliance obligation identified by judicial extraction engine.",
+        "evidence_text": "The Bombay High Court, in its judgment dated 14.03.2022, directed the Municipal Corporation of Greater Mumbai to execute a formal conveyance of plot C.S. No. 1546 of Lower Parel Division in favour of Respondent No. 1 within eight weeks.",
+        "confidence": 0.92,
+        "department": "Concerned Department Head"
+      }
+    ],
+    "similar_cases": [
+      {
+        "case_id": "doc_53_1950",
+        "title": "State Of Bombay vs Narothamdas Jethabai And Anr on 20 December 1950 1",
+        "similarity": 0.6183901429176331,
+        "relevant_directive": "State Of Bombay vs Narothamdas Jethabai And Anr. on 20\nDecember, 1950\nEquivalent citations: AIR1951SC69, (1951)53BOMLR402, [1951]2SCR51, AIR\n1951 SUPREME COURT 69\nBench: Mehr Chand Mahajan, Saiyid Fazal Ali\nJUDGMENT\n Fazl Ali, J. \n1.",
+        "year": "1950",
+        "action_plan": "State Of Bombay vs Narothamdas Jethabai And Anr on 20 December 1950 1"
+      },
+      {
+        "case_id": "doc_37_1950",
+        "title": "Nanalal Zaver And Another vs Bombay Life Assurance Co Ltd And on 4 May 1950 1",
+        "similarity": 0.5997762680053711,
+        "relevant_directive": "Nanalal Zaver And Another vs Bombay Life Assurance Co.\nLtd.And ... on 4 May, 1950\nEquivalent citations: 1950 AIR 172, 1950 SCR 391, AIR 1950 SUPREME\nCOURT 172, 20 COM CAS 179\nAuthor: Hiralal J. Kania\nBench: Hiralal J.",
+        "year": "1950",
+        "action_plan": "Nanalal Zaver And Another vs Bombay Life Assurance Co Ltd And on 4 May 1950 1"
+      },
+      {
+        "case_id": "doc_34_1950",
+        "title": "Messrs Khimji Poonja And Company vs Shri Baldev Das C Parikh on 14 March 1950 1",
+        "similarity": 0.593145489692688,
+        "relevant_directive": "Messrs. Khimji Poonja And Company vs Shri Baldev Das C.\nParikh on 14 March, 1950\nEquivalent citations: 1950 AIR, 7 1950 SCR 64, AIR 1950 SUPREME COURT 7\nBench: Hiralal J. Kania, Saiyid Fazal Ali, Mehr Chand Mahajan, B.K.\nMukherjea\n           PETITIONER:\nMESSRS. KHIMJI POONJA AND COMPANY\n        Vs.\nRESPONDENT:\nSHRI BALDEV DAS C.",
+        "year": "1950",
+        "action_plan": "Messrs Khimji Poonja And Company vs Shri Baldev Das C Parikh on 14 March 1950 1"
+      }
+    ],
+    "id": "e14b06f7-289c-4665-8c38-f5efda06f3cc",
+    "status": "pending",
+    "processing_status": "done",
+    "created_at": "2026-05-07T22:07:45.680896"
+  },
+  "b2a2765a-d738-4abb-986b-10cce4478815": {
+    "case_title": "The State Of Chhattisgarh vs Ashok Bhoi",
+    "court": "Supreme Court of India",
+    "date": "27 February, 2025",
+    "parties": [
+      "State of Chhattisgarh",
+      "Ashok Bhoi",
+      "Vikash Khubwani"
+    ],
+    "orders": [
+      "Dismissal of Criminal Appeal Nos. 1258-1259 of 2015 filed by the State of Chhattisgarh.",
+      "Administrative disposal of all pending interlocutory applications."
+    ],
+    "directive_sentences": [
+      "In that view of the matter, both the appeals deserve to be dismissed and are accordingly dismissed.",
+      "Pending application(s), if any, shall stand disposed of."
+    ],
+    "preview_summary": [
+      "The Supreme Court upheld the High Court's acquittal of the respondents in a kidnapping and murder case, affirming that the prosecution failed to establish a complete chain of circumstantial evidence.",
+      "The Court clarified that the 'last seen together' theory under Section 106 of the Evidence Act is insufficient for conviction unless the prosecution proves all other incriminating circumstances beyond reasonable doubt."
+    ],
+    "deadlines": [],
+    "actions": [
+      {
+        "task": "Execute compliance measure for directive: In that view of the matter, both the appeals deserve to be d...",
+        "type": "COMPLIANCE",
+        "deadline": "Within statutory period (Standard 30 days)",
+        "urgency_score": 4,
+        "risk_level": "MEDIUM",
+        "reason": "Mandatory legal compliance obligation identified by judicial extraction engine.",
+        "evidence_text": "In that view of the matter, both the appeals deserve to be dismissed and are accordingly dismissed.",
+        "confidence": 0.92,
+        "department": "Concerned Department Head"
+      },
+      {
+        "task": "Execute compliance measure for directive: Pending application(s), if any, shall stand disposed of....",
+        "type": "COMPLIANCE",
+        "deadline": "Within statutory period (Standard 30 days)",
+        "urgency_score": 4,
+        "risk_level": "MEDIUM",
+        "reason": "Mandatory legal compliance obligation identified by judicial extraction engine.",
+        "evidence_text": "Pending application(s), if any, shall stand disposed of.",
+        "confidence": 0.92,
+        "department": "Concerned Department Head"
+      }
+    ],
+    "similar_cases": [
+      {
+        "case_id": "doc_35_1950",
+        "title": "Mohinder Singh vs The State on 17 October 1950 1",
+        "similarity": 0.6340752840042114,
+        "relevant_directive": "Mohinder Singh vs The State on 17 October, 1950\nEquivalent citations: 1953 AIR 415, 1950 SCR 821\nAuthor: Saiyid Fazal Ali\nBench: Saiyid Fazal Ali, B.K. Mukherjea, N.",
+        "year": "1950",
+        "action_plan": "Mohinder Singh vs The State on 17 October 1950 1"
+      },
+      {
+        "case_id": "doc_27_1950",
+        "title": "In The Supreme Court Of India vs Shankar And Others on 13 October 1950 1",
+        "similarity": 0.6169090867042542,
+        "relevant_directive": "[In The Supreme Court Of India ... vs Shankar And Others on 13\nOctober, 1950\nEquivalent citations: 1953 AIR 419, 1950 SCR 754, AIR 1953 SUPREME\nCOURT 419\nAuthor: Mehr Chand Mahajan\nBench: Mehr Chand Mahajan\n           PETITIONER:\n[IN THE SUPREME COURT OF INDIA (HYDERABAD).]NARHARI AND OTHE\n       ...",
+        "year": "1950",
+        "action_plan": "In The Supreme Court Of India vs Shankar And Others on 13 October 1950 1"
+      },
+      {
+        "case_id": "doc_53_1950",
+        "title": "State Of Bombay vs Narothamdas Jethabai And Anr on 20 December 1950 1",
+        "similarity": 0.6063522696495056,
+        "relevant_directive": "State Of Bombay vs Narothamdas Jethabai And Anr. on 20\nDecember, 1950\nEquivalent citations: AIR1951SC69, (1951)53BOMLR402, [1951]2SCR51, AIR\n1951 SUPREME COURT 69\nBench: Mehr Chand Mahajan, Saiyid Fazal Ali\nJUDGMENT\n Fazl Ali, J. \n1.",
+        "year": "1950",
+        "action_plan": "State Of Bombay vs Narothamdas Jethabai And Anr on 20 December 1950 1"
+      }
+    ],
+    "id": "b2a2765a-d738-4abb-986b-10cce4478815",
+    "status": "pending",
+    "processing_status": "done",
+    "created_at": "2026-05-07T22:12:35.616836"
+  }
+}

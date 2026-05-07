@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect, useMemo, useState, ComponentType } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import {
   AlertTriangle,
   CalendarClock,
@@ -71,30 +71,33 @@ export function DashboardPage() {
   const [risk, setRisk] = useState<(typeof riskLevels)[number]>('All')
   const [statusFilter, setStatusFilter] = useState('All')
   const [rows, setRows] = useState<DashboardRow[]>([])
+  const [allCases, setAllCases] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchCases = async () => {
       try {
         const response = await fetch('http://localhost:8000/cases')
         const data = await response.json()
+        setAllCases(data)
         
-        if (data.length === 0) {
-          setRows(dummyRows) // Fallback to dummy if none
+        const mappedRows: DashboardRow[] = data.flatMap((c: any) => 
+          (c.actions || []).map((a: any, idx: number) => ({
+            id: `${c.id}-${idx}`,
+            caseName: c.case_title || "Untitled Judgment",
+            department: a.department || "General",
+            actionRequired: a.task,
+            deadline: a.deadline,
+            risk: (a.risk_level || 'Medium') as RiskLevel,
+            status: c.status === 'approved' ? 'Approved' : 'Pending'
+          }))
+        )
+        
+        if (mappedRows.length === 0) {
+          setRows(dummyRows)
         } else {
-          // Map backend cases to dashboard rows (flattening actions)
-          const actualRows: DashboardRow[] = data.flatMap((c: any) => 
-            (c.actions || []).map((a: any, idx: number) => ({
-              id: `${c.id.slice(0,8)}-${idx}`,
-              caseName: c.case_title || "Untitled Judgment",
-              department: a.department || "General",
-              actionRequired: a.task,
-              deadline: a.deadline,
-              risk: (a.risk_level || 'Medium') as RiskLevel,
-              status: c.status === 'approved' ? 'Approved' : 'Pending'
-            }))
-          )
-          setRows(actualRows)
+          setRows(mappedRows)
         }
       } catch (err) {
         console.error("Failed to fetch cases:", err)
@@ -127,6 +130,23 @@ export function DashboardPage() {
     const unique = Array.from(new Set(rows.map(r => r.department)))
     return ['All departments', ...unique.sort()]
   }, [rows])
+
+  const handleRowClick = (row: DashboardRow) => {
+    const caseId = row.id.split('-')[0]
+    const caseData = allCases.find(c => c.id === caseId)
+    
+    if (caseData) {
+      navigate('/verification', { 
+        state: { 
+          id: caseId, 
+          caseData: caseData,
+          fileName: caseData.file_name || 'Extracted Document'
+        } 
+      })
+    } else if (['1','2','3','4','5','6'].includes(caseId)) {
+      navigate('/verification', { state: { id: 'case-2024-1842' } })
+    }
+  }
 
   if (loading) {
     return (
@@ -235,7 +255,11 @@ export function DashboardPage() {
             </thead>
             <tbody className="divide-y divide-slate-100 bg-white">
               {filtered.map((row) => (
-                <tr key={row.id} className="hover:bg-slate-50/50 transition-colors cursor-pointer group">
+                <tr 
+                  key={row.id} 
+                  onClick={() => handleRowClick(row)}
+                  className="hover:bg-slate-50/50 transition-colors cursor-pointer group"
+                >
                   <td className="px-6 py-4">
                     <div className="text-sm font-semibold text-gov-navy group-hover:text-gov-blue">{row.caseName}</div>
                     <div className="text-[10px] font-mono text-slate-400 mt-0.5">{row.id}</div>

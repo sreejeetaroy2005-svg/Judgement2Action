@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import {
   ShieldCheck,
   CalendarDays,
@@ -18,33 +19,37 @@ import { RiskBadge } from '../components/RiskBadge'
 
 export function TrustedDashboard() {
   const [rows, setRows] = useState<DashboardRow[]>([])
+  const [allCases, setAllCases] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchCases = async () => {
       try {
         const response = await fetch('http://localhost:8000/cases')
         const data = await response.json()
+        setAllCases(data)
         
-        let actualRows: DashboardRow[] = []
-        if (!data || data.length === 0) {
-          actualRows = dummyRows
+        const mappedRows: DashboardRow[] = data.flatMap((c: any) => 
+          (c.actions || []).map((a: any, idx: number) => ({
+            id: c.id, // Keep original case ID
+            actionId: `${c.id?.slice(0,8) || Math.random().toString(36).substr(2,9)}-${idx}`,
+            caseName: c.case_title || "Untitled Judgment",
+            department: a.department || "General",
+            actionRequired: a.task,
+            deadline: a.deadline,
+            risk: (a.risk_level || 'Medium') as RiskLevel,
+            status: c.status === 'approved' ? 'Approved' : 'Pending'
+          }))
+        )
+        
+        const approvedRows = mappedRows.filter(r => r.status === 'Approved')
+        
+        if (approvedRows.length === 0) {
+          setRows(dummyRows.filter(r => r.status === 'Approved'))
         } else {
-          // Map backend cases to dashboard rows
-          actualRows = data.flatMap((c: any) => 
-            (c.actions || []).map((a: any, idx: number) => ({
-              id: `${c.id?.slice(0,8) || Math.random().toString(36).substr(2,9)}-${idx}`,
-              caseName: c.case_title || "Untitled Judgment",
-              department: a.department || "General",
-              actionRequired: a.task,
-              deadline: a.deadline,
-              risk: (a.risk_level || 'Medium') as RiskLevel,
-              status: c.status === 'approved' ? 'Approved' : 'Pending'
-            }))
-          )
+          setRows(approvedRows)
         }
-        // FILTER: ONLY APPROVED
-        setRows(actualRows.filter(r => r.status === 'Approved'))
       } catch (err) {
         console.error("Failed to fetch cases:", err)
         setRows(dummyRows.filter(r => r.status === 'Approved'))
@@ -55,6 +60,22 @@ export function TrustedDashboard() {
 
     fetchCases()
   }, [])
+
+  const handleCardClick = (caseId: string) => {
+    const caseData = allCases.find(c => c.id === caseId)
+    if (caseData) {
+      navigate('/verification', { 
+        state: { 
+          id: caseId, 
+          caseData: caseData,
+          fileName: caseData.file_name || 'Extracted Document'
+        } 
+      })
+    } else {
+      // Fallback for dummy data
+      navigate('/verification', { state: { id: 'case-2024-1842' } })
+    }
+  }
 
   const groupedByDept = useMemo(() => {
     const groups: Record<string, DashboardRow[]> = {}
@@ -140,8 +161,9 @@ export function TrustedDashboard() {
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {deptRows.map((row) => (
                 <div 
-                  key={row.id} 
-                  className="group relative overflow-hidden rounded-2xl bg-white border border-slate-200 p-6 transition-all hover:border-gov-blue hover:shadow-xl hover:shadow-gov-blue/5"
+                  key={row.actionId} 
+                  onClick={() => handleCardClick(row.id)}
+                  className="group relative cursor-pointer overflow-hidden rounded-2xl bg-white border border-slate-200 p-6 transition-all hover:border-gov-blue hover:shadow-xl hover:shadow-gov-blue/5"
                 >
                   {/* Risk Indicator Tag */}
                   <div className="absolute top-0 right-0 p-2">
@@ -174,9 +196,16 @@ export function TrustedDashboard() {
                         </div>
                       </div>
                       
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-50 text-slate-400 group-hover:bg-gov-blue group-hover:text-white transition-all">
+                      <button 
+                        type="button"
+                        onClick={(e) => { 
+                          e.stopPropagation(); 
+                          handleCardClick(row.id); 
+                        }}
+                        className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-50 text-slate-400 group-hover:bg-gov-blue group-hover:text-white transition-all shadow-sm focus:ring-2 focus:ring-gov-blue/20 outline-none"
+                      >
                         <ArrowRight className="h-4 w-4" />
-                      </div>
+                      </button>
                     </div>
                   </div>
                 </div>
