@@ -515,5 +515,79 @@
     "status": "pending",
     "processing_status": "done",
     "created_at": "2026-05-07T23:00:45.445898"
+  },
+  "d377dc9b-beaa-41de-87dd-bdfc71bac6a4": {
+    "case_title": "A.J. Peiris vs State Of Madras",
+    "court": "Supreme Court of India",
+    "date": "18 March, 1954",
+    "parties": [
+      "A.J. Peiris",
+      "State of Madras"
+    ],
+    "orders": [
+      "The Sessions Judge, South Kanara, on November 29, 1952, convicted the appellant under Section 120-B, read with Section 302 and Section 109 of the Indian Penal Code and sentenced him to death.",
+      "The Madras High Court, on July 31, 1953, upheld the conviction and sentence of death of the appellant."
+    ],
+    "directive_sentences": [],
+    "preview_summary": [
+      "The appellant, A.J. Peiris, challenged a death sentence for the conspiracy and murder of an individual named George, who was allegedly killed in December 1950.",
+      "The prosecution's case is built upon the testimony of an accomplice turned approver, Albert Patrao, who was granted pardon by the District Magistrate of South Kanara after his confession was recorded.",
+      "The appeal follows a split decision by the Madras High Court judges regarding the guilt of the appellant, despite their agreement on the conviction of the co-accused."
+    ],
+    "deadlines": [],
+    "actions": [
+      {
+        "task": "Execute compliance measure for directive: The Sessions Judge, South Kanara, on November 29, 1952, conv...",
+        "type": "COMPLIANCE",
+        "deadline": "Within statutory period (Standard 30 days)",
+        "urgency_score": 4,
+        "risk_level": "MEDIUM",
+        "reason": "Mandatory legal compliance obligation identified by judicial extraction engine.",
+        "evidence_text": "The Sessions Judge, South Kanara, on November 29, 1952, convicted the appellant under Section 120-B, read with Section 302 and Section 109 of the Indian Penal Code and sentenced him to death.",
+        "confidence": 0.92,
+        "department": "Concerned Department Head"
+      },
+      {
+        "task": "Execute compliance measure for directive: The Madras High Court, on July 31, 1953, upheld the convicti...",
+        "type": "COMPLIANCE",
+        "deadline": "Within statutory period (Standard 30 days)",
+        "urgency_score": 4,
+        "risk_level": "MEDIUM",
+        "reason": "Mandatory legal compliance obligation identified by judicial extraction engine.",
+        "evidence_text": "The Madras High Court, on July 31, 1953, upheld the conviction and sentence of death of the appellant.",
+        "confidence": 0.92,
+        "department": "Concerned Department Head"
+      }
+    ],
+    "similar_cases": [
+      {
+        "case_id": "doc_71_1951",
+        "title": "Bijjoy Chand Potra vs The State on 14 December 1951 1",
+        "similarity": 0.666719377040863,
+        "relevant_directive": "Bijjoy Chand Potra vs The State on 14 December, 1951\nEquivalent citations: 1952 AIR 105, 1952 SCR 202\nAuthor: Saiyid Fazal Ali\nBench: Saiyid Fazal Ali, Vivian Bose\n           PETITIONER:\nBIJJOY CHAND POTRA\n        Vs.\nRESPONDENT:\nTHE STATE\nDATE OF JUDGMENT:\n14/12/1951\nBENCH:\nFAZAL ALI,...",
+        "year": "1951",
+        "action_plan": "Bijjoy Chand Potra vs The State on 14 December 1951 1"
+      },
+      {
+        "case_id": "doc_35_1950",
+        "title": "Mohinder Singh vs The State on 17 October 1950 1",
+        "similarity": 0.6621582508087158,
+        "relevant_directive": "Mohinder Singh vs The State on 17 October, 1950\nEquivalent citations: 1953 AIR 415, 1950 SCR 821\nAuthor: Saiyid Fazal Ali\nBench: Saiyid Fazal Ali, B.K. Mukherjea, N.",
+        "year": "1950",
+        "action_plan": "Mohinder Singh vs The State on 17 October 1950 1"
+      },
+      {
+        "case_id": "doc_30_1950",
+        "title": "Kapildeo Singh vs The King on 24 January 1950 1",
+        "similarity": 0.6460393667221069,
+        "relevant_directive": "Kapildeo Singh vs The King on 24 January, 1950\nEquivalent citations: [1950]SUPPSCR144\nBench: Meher Chand Mahajan, Saiyad Fazal Ali\nJUDGMENT\n Mahajan, J.\n1. This is an appeal by special leave against an order of the High Court at Patna, affirming the\nconviction of the appellant by the Additional Sessions Judge, Arrah, under s.",
+        "year": "1950",
+        "action_plan": "Kapildeo Singh vs The King on 24 January 1950 1"
+      }
+    ],
+    "id": "d377dc9b-beaa-41de-87dd-bdfc71bac6a4",
+    "status": "pending",
+    "processing_status": "done",
+    "created_at": "2026-05-07T23:02:42.793265"
   }
 }

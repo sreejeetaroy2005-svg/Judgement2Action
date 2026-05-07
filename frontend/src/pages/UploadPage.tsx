@@ -167,6 +167,7 @@ export function UploadPage() {
 
     try {
       // Step 1: Upload — returns immediately with a case_id
+      // Production API endpoint: https://judgement2action-1.onrender.com/upload
       const uploadResponse = await fetch('https://judgement2action-1.onrender.com/upload', {
         method: 'POST',
         body: formData,
