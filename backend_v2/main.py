@@ -95,11 +95,10 @@ def process_in_background(file_id: str, file_path: str):
         cases_db[file_id]["processing_status"] = "extracting_signals"
 
         # 2. Process with Gemini
-        raw_data = process_with_gemini(text)
+        raw_data, last_error = process_with_gemini(text)
         if not raw_data:
             cases_db[file_id]["processing_status"] = "error"
-            # Attempt to get the last error from a global or passed variable
-            cases_db[file_id]["error"] = "Gemini analysis failed. Check API Key quota or model availability."
+            cases_db[file_id]["error"] = f"Gemini analysis failed: {last_error}"
             save_db()
             return
 

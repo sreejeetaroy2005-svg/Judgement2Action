@@ -111,6 +111,7 @@ def process_with_gemini(text: str, file_path: str = None):
 
     for model_name in models_to_try:
         print(f"DEBUG: Attempting extraction with model: {model_name}")
+        sys.stdout.flush()
         try:
             response = client.models.generate_content(
                 model=model_name,
@@ -119,10 +120,8 @@ def process_with_gemini(text: str, file_path: str = None):
             )
             
             if not response or not response.text:
-                print(f"WARN: Model {model_name} returned empty response.")
                 continue
 
-            # Robust JSON cleaning
             raw_text = response.text.strip()
             if "```json" in raw_text:
                 raw_text = raw_text.split("```json")[1].split("```")[0].strip()
@@ -130,35 +129,12 @@ def process_with_gemini(text: str, file_path: str = None):
                 raw_text = raw_text.split("```")[1].strip()
             
             result = json.loads(raw_text)
-
-            if isinstance(result, list) and len(result) > 0:
-                result = result[0]
-            
-            # STEP 2: SELF-CORRECTION LOOP (Optional/Fallback)
-            try:
-                final_result = verify_extraction(text_for_ai, result)
-            except Exception as ve:
-                print(f"WARN: Verification failed, using original result: {ve}")
-                final_result = result
-            
-            # Robustness check: Ensure result is a dictionary
-            if isinstance(final_result, list) and len(final_result) > 0:
-                final_result = final_result[0]
-            
-            if not isinstance(final_result, dict):
-                print(f"ERROR: Model {model_name} returned non-dict JSON. Type: {type(final_result)}")
-                continue
-
-            print(f"SUCCESS: Gemini extraction complete. compliance={final_result.get('compliance_required')}")
-            return final_result
+            return result, None
             
         except Exception as e:
             last_error = str(e)
             print(f"ERROR: Model {model_name} failed: {last_error}")
-            if "API_KEY_INVALID" in last_error or "403" in last_error:
-                print("CRITICAL: API Key issue detected.")
-                break
+            sys.stdout.flush()
             continue
             
-    print(f"CRITICAL: All Gemini models failed. Last error: {last_error}")
-    return None
+    return None, last_error
