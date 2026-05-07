@@ -88,54 +88,61 @@ def verify_extraction(text: str, extracted_json: dict):
     return extracted_json
 
 def process_with_gemini(text: str, file_path: str = None):
-    # Try multiple models in case of high demand or quota issues
     models_to_try = [
-        'gemini-1.5-flash',              
-        'gemini-2.0-flash-exp',
-        'gemini-1.5-pro'
+        'gemini-flash-latest',
+        'gemini-pro-latest'
     ]
     
     # Context-aware chunking: prioritize the end of the judgment where orders usually are
-    if len(text) > 25000:
-        # Take first 5k (context) and last 15k (orders) to stay safe with token limits
-        text_for_ai = text[:5000] + "\n[...]\n" + text[-15000:]
+    if len(text) > 30000:
+        text_for_ai = text[:10000] + "\n[...]\n" + text[-15000:]
     else:
         text_for_ai = text
         
     prompt = PROMPT_TEMPLATE.format(text=text_for_ai)
-    
-    last_error = None
+    last_error = "No models attempted"
     
     if not key:
-        print("CRITICAL: GEMINI_API_KEY is missing!")
-        return None
+        return None, "GEMINI_API_KEY is missing in environment variables"
 
     for model_name in models_to_try:
-        print(f"DEBUG: Attempting extraction with model: {model_name}")
-        sys.stdout.flush()
-        try:
-            response = client.models.generate_content(
-                model=model_name,
-                contents=prompt,
-                config={'response_mime_type': 'application/json'}
-            )
-            
-            if not response or not response.text:
-                continue
-
-            raw_text = response.text.strip()
-            if "```json" in raw_text:
-                raw_text = raw_text.split("```json")[1].split("```")[0].strip()
-            elif "```" in raw_text:
-                raw_text = raw_text.split("```")[1].strip()
-            
-            result = json.loads(raw_text)
-            return result, None
-            
-        except Exception as e:
-            last_error = str(e)
-            print(f"ERROR: Model {model_name} failed: {last_error}")
+        # Try each model twice in case of transient quota hits
+        for attempt in range(2):
+            print(f"DEBUG: Attempting extraction with {model_name} (Attempt {attempt+1})")
             sys.stdout.flush()
-            continue
+            try:
+                response = client.models.generate_content(
+                    model=model_name,
+                    contents=prompt,
+                    config={'response_mime_type': 'application/json'}
+                )
+                
+                if not response or not response.text:
+                    last_error = f"Model {model_name} returned empty response"
+                    continue
+
+                raw_text = response.text.strip()
+                # Clean markdown if present
+                if "```json" in raw_text:
+                    raw_text = raw_text.split("```json")[1].split("```")[0].strip()
+                elif "```" in raw_text:
+                    raw_text = raw_text.split("```")[1].strip()
+                
+                result = json.loads(raw_text)
+                print(f"SUCCESS: Extracted data using {model_name}")
+                sys.stdout.flush()
+                return result, None
+                
+            except Exception as e:
+                last_error = str(e)
+                print(f"ERROR: {model_name} failed: {last_error}")
+                sys.stdout.flush()
+                
+                # If it's a quota error, wait a bit and retry the same model
+                if "429" in last_error:
+                    import time
+                    time.sleep(2)
+                else:
+                    break # Try next model for other errors
             
     return None, last_error
