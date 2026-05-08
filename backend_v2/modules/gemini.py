@@ -8,9 +8,13 @@ load_dotenv()
 
 # Initialize the new GenAI client
 key = os.getenv("GEMINI_API_KEY")
+client = None
+
 if key:
     print(f"DEBUG: Using API Key: {key[:5]}...{key[-5:]}")
-client = genai.Client(api_key=key)
+    client = genai.Client(api_key=key)
+else:
+    print("ERROR: GEMINI_API_KEY is missing from environment variables!")
 
 PROMPT_TEMPLATE = """
 You are a highly specialized Legal AI Assistant for Indian Law.
@@ -68,6 +72,8 @@ Provide the updated, corrected JSON following the exact same schema.
 def verify_extraction(text: str, extracted_json: dict):
     """Reflexion Step: Verifies and corrects the first pass of AI extraction."""
     print("DEBUG: Starting Self-Correction (Reflexion) Loop...")
+    if not client:
+        return extracted_json
     try:
         prompt = VERIFY_PROMPT_TEMPLATE.format(
             text=text[:10000], 
@@ -75,7 +81,7 @@ def verify_extraction(text: str, extracted_json: dict):
         )
         
         response = client.models.generate_content(
-            model='gemini-2.0-flash', # Use a fast stable model for verification
+            model='gemini-1.5-flash', # Use a fast stable model for verification
             contents=prompt,
             config={'response_mime_type': 'application/json'}
         )
@@ -89,8 +95,8 @@ def verify_extraction(text: str, extracted_json: dict):
 
 def process_with_gemini(text: str, file_path: str = None):
     models_to_try = [
-        'gemini-2.0-flash',
-        'gemini-flash-latest'
+        'gemini-1.5-flash',
+        'gemini-1.5-flash-latest'
     ]
     
     # Context-aware chunking: prioritize the end of the judgment where orders usually are
@@ -102,7 +108,7 @@ def process_with_gemini(text: str, file_path: str = None):
     prompt = PROMPT_TEMPLATE.format(text=text_for_ai)
     last_error = "No models attempted"
     
-    if not key:
+    if not client:
         return None, "GEMINI_API_KEY is missing in environment variables"
 
     for model_name in models_to_try:
