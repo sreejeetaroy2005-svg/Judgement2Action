@@ -167,8 +167,8 @@ export function UploadPage() {
 
     try {
       // Step 1: Upload — returns immediately with a case_id
-      // Production API endpoint: https://judgement2action-1.onrender.com/upload
-      const uploadResponse = await fetch('https://judgement2action-1.onrender.com/upload', {
+      const API_BASE = import.meta.env.VITE_API_URL || 'https://judgement2action-1.onrender.com'
+      const uploadResponse = await fetch(`${API_BASE}/upload`, {
         method: 'POST',
         body: formData,
       })
@@ -187,7 +187,7 @@ export function UploadPage() {
 
       while (attempts < maxAttempts) {
         await new Promise(resolve => setTimeout(resolve, 2000))
-        const statusResponse = await fetch(`https://judgement2action-1.onrender.com/status/${caseId}`)
+        const statusResponse = await fetch(`${API_BASE}/status/${caseId}`)
         const statusData = await statusResponse.json()
 
         if (statusData.processing_status === 'done') {

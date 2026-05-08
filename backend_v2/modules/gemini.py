@@ -75,7 +75,7 @@ def verify_extraction(text: str, extracted_json: dict):
         )
         
         response = client.models.generate_content(
-            model='gemini-flash-latest', # Use a fast stable model for verification
+            model='gemini-1.5-flash', # Use a fast stable model for verification
             contents=prompt,
             config={'response_mime_type': 'application/json'}
         )
@@ -89,8 +89,8 @@ def verify_extraction(text: str, extracted_json: dict):
 
 def process_with_gemini(text: str, file_path: str = None):
     models_to_try = [
-        'gemini-flash-latest',
-        'gemini-pro-latest'
+        'gemini-1.5-flash',
+        'gemini-1.5-pro'
     ]
     
     # Context-aware chunking: prioritize the end of the judgment where orders usually are

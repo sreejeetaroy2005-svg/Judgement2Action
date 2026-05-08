@@ -109,9 +109,9 @@ def process_in_background(file_id: str, file_path: str):
         cases_db[file_id]["processing_status"] = "generating_actions"
         final_data = validate_and_enrich_actions(raw_data)
 
-        # 4. RAG similarity search (DISABLED for demo to save memory)
+        # 4. RAG similarity search
         cases_db[file_id]["processing_status"] = "finding_similar_cases"
-        final_data["similar_cases"] = [] # find_similar_cases(text)
+        final_data["similar_cases"] = find_similar_cases(text)
 
         # 5. Merge and mark done
         final_data["id"] = file_id
