@@ -90,7 +90,7 @@ def verify_extraction(text: str, extracted_json: dict):
 def process_with_gemini(text: str, file_path: str = None):
     models_to_try = [
         'gemini-1.5-flash',
-        'gemini-1.5-pro'
+        'gemini-1.5-flash-latest'
     ]
     
     # Context-aware chunking: prioritize the end of the judgment where orders usually are
